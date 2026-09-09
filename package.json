@@ -1,0 +1,40 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "node scripts/deploy.mjs",
+    "docs:build": "vitepress build",
+    "docs:dev": "vitepress dev",
+    "docs:preview": "vitepress preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "pull": "node scripts/pull.mjs",
+    "sync": "node scripts/sync.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/markdown": "^8.0.3",
+    "@types/node": "^26.4.1",
+    "@vueuse/core": "^14.4.0",
+    "dayjs": "^1.11.23",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsonc": "^3.3.0",
+    "eslint-plugin-vue": "^10.10.0",
+    "globals": "^17.9.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "prettier": "^3.9.6",
+    "prettier-plugin-packagejson": "^3.0.2",
+    "sass": "^1.102.0",
+    "typescript-eslint": "^8.65.0",
+    "vitepress": "2.0.0-alpha.19",
+    "vue": "^3.5.41",
+    "vue-eslint-parser": "^10.4.1"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  }
+}

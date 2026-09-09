@@ -1,0 +1,34 @@
+@use './vars.scss';
+@use './vitepress.scss';
+
+.zg-flex,
+.zg-flex-col,
+.zg-flex-row,
+.zg-flex-row-center,
+.zg-flex-center,
+.zg-flex-between {
+  display: flex;
+}
+
+.zg-flex-col {
+  flex-direction: column;
+}
+
+.zg-flex-row {
+  flex-direction: row;
+}
+
+.zg-flex-row-center {
+  flex-direction: row;
+  align-items: center;
+}
+
+.zg-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.zg-flex-between {
+  align-items: center;
+  justify-content: space-between;
+}

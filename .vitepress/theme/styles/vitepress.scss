@@ -1,0 +1,16 @@
+/* ==========================================================================
+   排版：正文系统黑体（见 vars.scss 的 --vp-font-family-base），
+   标题/引用用系统宋体衬线（--vp-font-family-serif），零 webfont 下载。
+   衬线只给 hero 主标题 + 文章 h1/h2 + 引用，正文与 h3 以下保持无衬线，拉开层次。
+   ========================================================================== */
+
+.VPHero .name,
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc blockquote {
+  font-family: var(--vp-font-family-serif);
+}
+
+.VPHomeHero > .container {
+  min-height: 312px;
+}
