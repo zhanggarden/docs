@@ -3,6 +3,7 @@ import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import ZGDocHeader from './components/ZGDocHeader.vue';
+import ZGTransNotice from './components/ZGTransNotice.vue';
 import './styles/index.scss';
 
 export default {
@@ -12,5 +13,9 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'doc-before': () => h(ZGDocHeader)
     });
+  },
+  // 全局注册通用组件，markdown 内可直接使用
+  enhanceApp({ app }) {
+    app.component('ZGTransNotice', ZGTransNotice);
   }
 } satisfies Theme;

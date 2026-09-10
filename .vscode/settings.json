@@ -1,0 +1,139 @@
+{
+  // ---------- 编辑器通用 ----------
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.stickyScroll.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.accessibilitySupport": "on",
+  // 在字符串中也触发自动补全
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  // 保存时自动修复（本项目未装 stylelint，stylelint 项无扩展时会被忽略，保留以贴近原配置）
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  // ---------- Diff ----------
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.maxComputationTime": 0,
+
+  // ---------- ESLint ----------
+  "eslint.format.enable": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc"
+  ],
+
+  // ---------- 文件 ----------
+  "files.associations": {
+    ".env": "ini",
+    ".env.*": "ini",
+    "*.mdx": "markdown",
+    "*.cjson": "jsonc"
+  },
+
+  // ---------- 移动文件时不自动改 import（js/ts 统一设置）----------
+  "js/ts.updateImportsOnFileMove.enabled": "never",
+
+  // ---------- 资源管理器 ----------
+  "explorer.confirmDelete": false,
+
+  // ---------- 搜索排除（依赖 + 构建产物）----------
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/.gitignore": true,
+    "**/.svn": true,
+    "**/.idea": true,
+    "**/.yarn": true,
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/*.log": true,
+    "**/*.log*": true,
+    "**/yarn.lock": true,
+    "yarn-error.log": true,
+    "CHANGELOG.md": true,
+    "out": true,
+    "dist": true,
+    ".vitepress/cache": true,
+    ".vitepress/dist": true,
+    "pnpm-lock.yaml": true,
+    "**/.vscode": false
+  },
+
+  // ---------- Git ----------
+  "git.autofetch": false,
+  "git.confirmSync": false,
+
+  // ---------- 其他 ----------
+  "json.schemaDownload.enable": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.inheritEnv": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "none",
+  "github.copilot.enable": {
+    "*": false,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false
+  },
+
+  // ---------- 语言级 ----------
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  }
+}

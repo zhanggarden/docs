@@ -12,6 +12,7 @@ Thumbs.db
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
 
 # Logs
@@ -24,3 +25,4 @@ Thumbs.db
 
 # Local scripts
 scripts/
+.workbuddy
