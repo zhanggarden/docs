@@ -1,88 +1,15 @@
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { defineConfig, type DefaultTheme } from 'vitepress';
+import { defineConfig } from 'vitepress';
 import { ZGThemeConfig } from './types.ts';
 import { overrideComponent } from './utils.ts';
+import chungengSidebar from './sidebar/chungeng.ts';
+import xiaduSidebar from './sidebar/xiadu.ts';
+import qiushouSidebar from './sidebar/qiushou.ts';
+import dongwangSidebar from './sidebar/dongwang.ts';
 
 // @ 指向 .vitepress 目录（供主题组件使用；config.ts 自身受 native loader 限制仍用相对路径）
 const vitepressDir = dirname(fileURLToPath(import.meta.url));
-
-const nav: DefaultTheme.NavItem[] = [
-  { text: '园序', link: '/' },
-  { text: '春耕', items: [{ text: 'Pi 中文文档', link: '/tech/pi/' }] },
-  { text: '夏读', items: [] },
-  { text: '秋收', items: [] },
-  { text: '冬望', items: [] }
-];
-
-const sidebar: Record<string, DefaultTheme.SidebarItem[]> = {
-  '/tech/pi': [
-    {
-      text: 'Pi 中文文档',
-      base: '/tech/pi',
-      items: [
-        {
-          text: '从这里开始',
-          items: [
-            { text: '总览', link: '/' },
-            { text: '快速入门', link: '/quickstart' },
-            { text: '使用 Pi', link: '/usage' },
-            { text: '服务提供商', link: '/providers' },
-            { text: '安全', link: '/security' },
-            { text: '容器化', link: '/containerization' },
-            { text: '设置', link: '/settings' },
-            { text: '按键绑定', link: '/keybindings' },
-            { text: '会话', link: '/sessions' },
-            { text: '压缩与分支摘要', link: '/compaction' }
-          ]
-        },
-        {
-          text: '自定义',
-          items: [
-            { text: '扩展', link: '/extensions' },
-            { text: '技能', link: '/skills' },
-            { text: '提示词模板', link: '/prompt-templates' },
-            { text: '主题', link: '/themes' },
-            { text: 'Pi 包', link: '/packages' },
-            { text: '自定义模型', link: '/models' },
-            { text: '自定义提供商', link: '/custom-provider' }
-          ]
-        },
-
-        {
-          text: '参考',
-          items: [
-            { text: '环境变量', link: '/environment-variables' },
-            { text: '会话文件格式', link: '/session-format' }
-          ]
-        },
-        {
-          text: '编程式使用',
-          items: [
-            { text: 'SDK', link: '/sdk' },
-            { text: 'RPC 模式', link: '/rpc' },
-            { text: 'JSON 事件流模式', link: '/json' },
-            { text: 'TUI 组件', link: '/tui' }
-          ]
-        },
-        {
-          text: '平台设置',
-          items: [
-            { text: 'Windows 设置', link: '/windows' },
-            { text: 'Termux（Android）设置', link: '/termux' },
-            { text: 'tmux 设置', link: '/tmux' },
-            { text: '终端设置', link: '/terminal-setup' },
-            { text: 'Shell 别名', link: '/shell-aliases' }
-          ]
-        },
-        {
-          text: '开发',
-          items: [{ text: '开发', link: '/development' }]
-        }
-      ]
-    }
-  ]
-};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig<ZGThemeConfig>({
@@ -108,8 +35,14 @@ export default defineConfig<ZGThemeConfig>({
   sitemap: { hostname: 'https://zhanggarden.cn' },
   themeConfig: {
     logo: '/logo.png',
-    nav: nav,
-    sidebar: sidebar,
+    nav: [
+      { text: '园序', link: '/' },
+      { text: '春耕', items: [{ text: 'Pi 中文文档', link: '/chungeng/pi/' }] },
+      { text: '夏读', items: [] },
+      { text: '秋收', items: [] },
+      { text: '冬望', items: [] }
+    ],
+    sidebar: { ...chungengSidebar, ...xiaduSidebar, ...qiushouSidebar, ...dongwangSidebar },
     outline: { label: '本页目录', level: [2, 3] },
     socialLinks: [{ icon: 'github', link: 'https://github.com/zhanggarden/docs' }],
     editLink: {
